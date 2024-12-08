@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TUUD | KESDAM IV/DIPONEGORO</title>
+    <title>TUUD | DENKESYAH 18.04.01 SORONG</title>
     <link rel="shortcut icon" href="{{ asset('static/favicon.ico') }}">
     <link rel="stylesheet" href="{{ asset('css/disposisi/fstk.css') }}">
 </head>
