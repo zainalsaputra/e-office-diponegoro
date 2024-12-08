@@ -17,7 +17,7 @@ class UserSeeder extends Seeder
     {
         User::create([
             'name' => 'Admin',
-            'email' => 'admin@email.test',
+            'email' => 'admin@kesdam.test',
             'username' => 'admin',
             'password' => Hash::make('password'),
             'role' => 'admin',
@@ -25,7 +25,7 @@ class UserSeeder extends Seeder
 
         User::create([
             'name' => 'DANDENKESYAH',
-            'email' => 'user@email.test',
+            'email' => 'user@kesdam.test',
             'username' => 'user',
             'password' => Hash::make('password'),
             'role' => 'user',
@@ -34,7 +34,7 @@ class UserSeeder extends Seeder
 
         User::create([
             'name' => 'WADAN DANDENKESYAH',
-            'email' => 'user2@email.test',
+            'email' => 'user2@kesdam.test',
             'username' => 'user2',
             'password' => Hash::make('password'),
             'role' => 'user',
@@ -43,7 +43,7 @@ class UserSeeder extends Seeder
 
         User::create([
             'name' => 'PASI TUUD',
-            'email' => 'user3@email.test',
+            'email' => 'user3@kesdam.test',
             'username' => 'user3',
             'password' => Hash::make('password'),
             'role' => 'user',
@@ -52,7 +52,7 @@ class UserSeeder extends Seeder
 
         User::create([
             'name' => 'PASI MINLOG',
-            'email' => 'user4@email.test',
+            'email' => 'user4@kesdam.test',
             'username' => 'user4',
             'password' => Hash::make('password'),
             'role' => 'user',
@@ -61,7 +61,7 @@ class UserSeeder extends Seeder
         
         User::create([
             'name' => 'PASI MINKES',
-            'email' => 'user5@email.test',
+            'email' => 'user5@kesdam.test',
             'username' => 'user5',
             'password' => Hash::make('password'),
             'role' => 'user',
@@ -70,7 +70,7 @@ class UserSeeder extends Seeder
 
         User::create([
             'name' => 'KARUMKIT dr. ARYOKO',
-            'email' => 'user6@email.test',
+            'email' => 'user6@kesdam.test',
             'username' => 'user6',
             'password' => Hash::make('password'),
             'role' => 'user',
@@ -79,7 +79,7 @@ class UserSeeder extends Seeder
 
         User::create([
             'name' => 'DANTIM KESLAP',
-            'email' => 'user7@email.test',
+            'email' => 'user7@kesdam.test',
             'username' => 'user7',
             'password' => Hash::make('password'),
             'role' => 'user',
@@ -88,7 +88,7 @@ class UserSeeder extends Seeder
 
         User::create([
             'name' => 'KAGUDKESYAH',
-            'email' => 'user8@email.test',
+            'email' => 'user8@kesdam.test',
             'username' => 'user8',
             'password' => Hash::make('password'),
             'role' => 'user',
