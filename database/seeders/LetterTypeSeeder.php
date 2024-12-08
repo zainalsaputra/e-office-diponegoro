@@ -14,17 +14,21 @@ class LetterTypeSeeder extends Seeder
      */
     public function run()
     {
-        // LetterType::create([
-        //     'name' => 'Biasa',
-        //     'format' => 'B/#/b/t',
-        // ]);
         LetterType::create([
             'name' => 'BIASA',
-            'format' => 'TA/#/DKWAU/t',
+            'format' => 'B/#/b/t',
         ]);
         LetterType::create([
-            'name' => 'AGENDA',
-            'format' => 'ND/#/KADY/t',
+            'name' => 'NOTA DINAS',
+            'format' => 'ND/#/b/t',
+        ]);
+        LetterType::create([
+            'name' => 'SPRIN',
+            'format' => 'SP/#/b/t',
+        ]);
+        LetterType::create([
+            'name' => 'RAHASIA',
+            'format' => 'R/#/b/t',
         ]);
     }
 }
