@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
 
     <!-- Primary Meta Tags -->
-    <title>TUUD | KESDAM IV/DIPONEGORO</title>
+    <title>TUUD | DENKESYAH 18.04.01 SORONG</title>
     <meta name="title" content="Tata Usaha dan Urusan Dalam" />
     <meta name="description" content="Aplikasi E-Office Institut Teknologi Sains dan Kesehatan RS dr. Soepraoen" />
 
@@ -48,7 +48,7 @@
                             <img src="{{ asset('static/logo.png') }}" height="50" alt="">
                             <div class="text-container">
                                 <span class="e-office success text-success">TUUD</span>
-                                <span class="kesdam">KESDAM IV/DIPONEGORO</span>
+                                <span class="kesdam">DENKESYAH 18.04.01 SORONG</span>
                             </div>
                         </a>
                     </div>

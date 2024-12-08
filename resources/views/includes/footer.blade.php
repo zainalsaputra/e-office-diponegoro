@@ -5,7 +5,7 @@
                 <ul class="list-inline list-inline-dots mb-0">
                     <li class="list-inline-item">
                         Copyright &copy; {{ date('Y') }}
-                        <a href="https://upti.itsk-soepraoen.ac.id" target="_blank" class="link-secondary">KESDAM IV/DIPONEGORO</a>.
+                        <a href="https://upti.itsk-soepraoen.ac.id" target="_blank" class="link-secondary">DENKESYAH 18.04.01 SORONG</a>.
                     </li>
                 </ul>
             </div>
