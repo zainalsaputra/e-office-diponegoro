@@ -1,0 +1,164 @@
+@page {
+    margin-left: 10mm;
+    margin-right: 10mm;
+    margin-top: 5mm;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+    text-transform: uppercase;
+}
+
+.break {
+    flex-basis: 100%;
+    height: 0;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.kop-container {
+    margin-bottom: 5mm;
+}
+
+.kop {
+    text-align: left;
+    border-bottom: 0.1px solid black;
+}
+
+.kop>p {
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.title-container {
+    width: 100%;
+    display: flex;
+    flex-grow: 0;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 5mm;
+    /* border: .5px solid green; */
+}
+
+.title-container>.title {
+    font-size: 16px;
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.agenda {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 5mm
+}
+
+.left,
+.right {
+    margin: -25px 0 15px;
+}
+
+/* .left {
+    margin-left: 15px;
+    margin-right: 230px;
+} */
+
+
+.left {
+    margin-left: 15px;
+    /* margin-right: 325px; */
+}
+
+.right {
+    margin-left: 310px;
+}
+
+.left span,
+.right span {
+    margin-right: 5px;
+    /* Jarak antara label dan nilai */
+}
+
+.disposisi-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 5px;
+}
+
+.disposisi-table th,
+.disposisi-table td {
+    border: 0.1px solid black;
+    padding: 13px;
+    text-align: left;
+    font-weight: 400;
+    background: none;
+}
+
+.disposisi-table th {
+    background-color: #f2f2f2;
+    text-align: center;
+}
+
+#col-1 {
+    text-align: center;
+    width: 1%;
+}
+
+#col-2 {
+    width: 25%;
+}
+
+#col-3 {
+    width: 18%;
+}
+
+#col-4 {
+    width: 18%;
+}
+
+#col-5 {
+    width: 35%;
+}
+
+#col-center {
+    text-align: center;
+}
+
+/* Legend */
+.legend {
+    margin-top: 0px;
+}
+
+.legend p {
+    /* font-weight: bold; */
+    margin-bottom: -10px;
+}
+
+.legend p span {
+    /* font-weight: bold; */
+    margin-right: 30px;
+}
+
+.legend-columns {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 0px;
+}
+
+.legend-columns .col-legend-1 {
+    /* flex: 1; */
+    margin-left: 20px;
+    margin-right: 110px;
+}
+
+.legend-columns .col-legend-2 {
+    margin-right: 50px;
+}

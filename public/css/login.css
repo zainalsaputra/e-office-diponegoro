@@ -1,0 +1,42 @@
+.text-center {
+    text-align: center; /* Semua elemen berada di tengah */
+    margin-bottom: 1rem; /* Jarak bawah antar elemen */
+}
+
+.navbar-brand {
+    font-family: 'Arial', sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    color: #333; /* Warna teks utama */
+    text-decoration: none; /* Hilangkan garis bawah */
+    display: inline-flex; /* Gunakan flex untuk elemen horizontal */
+    align-items: center; /* Selaraskan logo dengan teks */
+    flex-direction: column; /* Letakkan teks secara vertikal */
+}
+
+.navbar-brand img {
+    margin-bottom: 15px; /* Jarak antara logo dan teks */
+    vertical-align: middle; /* Pastikan logo sejajar */
+}
+
+.text-container {
+    text-align: center; /* Teks berada di tengah */
+    line-height: 1.2; /* Jarak antar baris */
+}
+
+.e-office {
+    /* color: #0056b3;  */
+    font-weight: bold;
+    font-size: 18px; /* Ukuran font lebih besar */
+    text-transform: uppercase;
+    margin-bottom: 2px; /* Beri jarak antara "E-OFFICE" dan "KESDAM" */
+    letter-spacing: 1px;
+}
+
+.kesdam {
+    color: #333; /* Warna teks "KESDAM IV/DIPONEGORO" */
+    font-weight: bold;
+    font-size: 18px; /* Ukuran font sedikit lebih kecil */
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
