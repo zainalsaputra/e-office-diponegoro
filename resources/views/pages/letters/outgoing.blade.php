@@ -93,7 +93,7 @@
                             <div class="col">
                                 <div class="mb-3">
                                     <label class="form-label">No. Surat</label>
-                                    <input type="text" class="form-control" name="no_surat" readonly>
+                                    <input type="text" class="form-control" name="no_surat">
                                 </div>
                             </div>
                             <div class="col">
