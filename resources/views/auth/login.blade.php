@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
     <!-- Primary Meta Tags -->
-    <title>TUUD | DENKESYAH 18.04.01 SORONG</title>
+    <title>Log In | SIP - {{ config('app.name') }}</title>
     <meta name="title" content="TUUD | DENKESYAH 18.04.01 SORONG">
     <meta name="description" content="Aplikasi Realtime Akuntabel Profesional Integratif Kesdam V/Brawijaya">
     <meta name="author" content="ITSK RS dr. Soepraoen Kesdam V/Brawijaya">
@@ -33,11 +33,13 @@
     <!-- App css -->
     <link href="{{ asset('vendor/auth/css/bootstrap.min.css') }}" rel="stylesheet" type="text/css"
         id="bs-default-stylesheet" />
-    <link href="{{ asset('vendor/auth/css/app.min.css') }}" rel="stylesheet" type="text/css" id="app-default-stylesheet" />
+    <link href="{{ asset('vendor/auth/css/app.min.css') }}" rel="stylesheet" type="text/css"
+        id="app-default-stylesheet" />
 
     <link href="{{ asset('vendor/auth/css/bootstrap-dark.min.css') }}" rel="stylesheet" type="text/css"
         id="bs-dark-stylesheet" />
-    <link href="{{ asset('vendor/auth/css/app-dark.min.css') }}" rel="stylesheet" type="text/css" id="app-dark-stylesheet" />
+    <link href="{{ asset('vendor/auth/css/app-dark.min.css') }}" rel="stylesheet" type="text/css"
+        id="app-dark-stylesheet" />
 
     <!-- icons -->
     <link href="{{ asset('vendor/auth/css/icons.min.css') }}" rel="stylesheet" type="text/css" />
@@ -62,7 +64,8 @@
                         <div class="auth-logo">
                             <a href="#" class="logo logo-dark text-center">
                                 <span class="logo-lg">
-                                    <img src="{{ asset('auth/images/demo/logo-kesdam.png') }}" alt="" height="60">
+                                    <img src="{{ asset('auth/images/demo/logo-kesdam.png') }}" alt=""
+                                        height="60">
                                 </span>
                             </a>
 
@@ -72,11 +75,11 @@
                                     </span>
                                 </a> --}}
                         </div>
-                        <h3 style="font-family: 'Russo One', sans-serif;">R A P I</h1>
-                            <h4 class="mb-1" style="font-family: 'Hammersmith One', sans-serif;">Realtime Akuntabel
-                                Profesional Integratif</h4>
+                        <h3 style="font-family: 'Russo One', sans-serif;">S I P</h1>
+                            <h4 class="mb-1" style="font-family: 'Hammersmith One', sans-serif;">SISTEM INFORMASI
+                                PELAPORAN</h4>
                             <h5 class="mt-0" style="font-family: 'Hammersmith One', sans-serif;">
-                                DENKESYAH 18.04.01 SORONG </h5>
+                                {{ config('app.name') }}</h5>
                     </div>
 
                     <!-- title-->
@@ -138,7 +141,7 @@
         <!-- Auth fluid right content -->
         <div class="auth-fluid-right text-center">
             <div class="auth-user-testimonial">
-                <h2 class="mb-3 text-white">Tata Usaha dan Usaha Dalam</h2>
+                <h2 class="mb-3 text-white">{{ config('app.name') }}</h2>
                 <p class="lead"><i class="mdi mdi-format-quote-open"></i> Whoever wants the pearl so they must brave
                     to jump in the deep ocean. <i class="mdi mdi-format-quote-close"></i>
                 </p>
