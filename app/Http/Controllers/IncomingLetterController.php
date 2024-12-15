@@ -551,32 +551,28 @@ class IncomingLetterController extends Controller
     public function getNumber($id)
     {
         try {
-            // get incoming letter by major_id
-            $incoming = IncomingLetter::where('major_id', $id)->whereYear('tgl_surat', Carbon::now()->year)->orderBy('id', 'desc')->first();
-            if ($incoming) {
-                $no_agenda = $incoming->no_agenda;
-                preg_match('/\d+/', $no_agenda, $matches);
+            // get outgoing letter by letter_type_id and sort by created_at desc
+            $outgoingLetter = OutgoingLetter::where('letter_type_id', $id)->whereYear('tgl_surat', Carbon::now()->year)->orderBy('created_at', 'desc')->first();
+
+            // if exist, get letter number
+            if ($outgoingLetter) {
+                // regex number
+                $no_surat = $outgoingLetter->no_surat;
+                preg_match('/\d+/', $no_surat, $matches);
                 $numb = $matches[0] + 1;
             } else {
                 $numb = 1;
             }
 
             // get format, month, year
-            // $format = LetterType::where("major_id", auth()->user()->major_id)->where('name', 'AGENDA')->first()->format; // Surat Biasa
-
-            $format = LetterType::where("major_id", auth()->user()->major_id)->where('name', 'BIASA')->first()->format; // Surat Biasa
-
-            // $format = LetterType::where("major_id", auth()->user()->major_id)->orderBy('created_at', 'asc')->first()->format; // Data Terbaru
-
-            // $format = "001/AGENDA/2024"
-
+            $format = LetterType::find($id)->format;
             $month = NumberToRoman::convert(date('n'));
             $year = date('Y');
 
             // replace format with number, month, year
             $result = str_replace(
-                array("#", "b", "t"),
-                array($numb, $month, $year),
+                array("#", "/b/", "/t"),
+                array($numb, "/" . $month . "/", "/" . $year),
                 $format
             );
 

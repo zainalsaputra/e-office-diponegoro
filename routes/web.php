@@ -35,7 +35,7 @@ Route::group(['middleware' => 'auth'], function () {
         Route::get('/incoming/{id}/download', [App\Http\Controllers\IncomingLetterController::class, 'download'])->name('incoming.download');
         Route::post('/incoming/{id}/disposisi', [App\Http\Controllers\IncomingLetterController::class, 'disposisi'])->name('incoming.disposisi');
         Route::get('/incoming/{id}/print', [App\Http\Controllers\IncomingLetterController::class, 'print'])->name('incoming.print');
-        Route::get('/incoming/get-number/{id}', [App\Http\Controllers\OutgoingLetterController::class, 'getNumber'])->name('incoming.get-number');
+        Route::get('/incoming/get-number/{id}', [App\Http\Controllers\IncomingLetterController::class, 'getNumber'])->name('incoming.get-number');
 
         // Outgoing
         Route::get('/outgoing', [App\Http\Controllers\OutgoingLetterController::class, 'index'])->name('outgoing.index');
