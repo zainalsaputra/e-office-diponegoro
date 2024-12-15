@@ -412,7 +412,7 @@ $(document).ready(function () {
 
         $.ajax({
             type: "get",
-            url: "/letter/incoming/get-number/" + $(this).val(),
+            url: "/letter/outgoing/get-number/" + $(this).val(),
             data: null,
             dataType: "json",
             beforeSend: function () {
