@@ -12,6 +12,7 @@
                             Surat Masuk
                         </h2>
                     </div>
+                    <!-- Page title actions -->
                     @if (!auth()->user()->isAdmin())
                     <div class="col-auto ms-auto d-print-none">
                         <div class="btn-list">
@@ -26,19 +27,6 @@
                         </div>
                     </div>
                     @endif
-                    <!-- Page title actions -->
-                    <div class="col-auto ms-auto d-print-none">
-                        {{-- <div class="btn-list">
-                            <span class="d-none d-sm-inline">
-                                <a href="#" class="btn btn-white" data-bs-toggle="modal" data-bs-target="#modal-create">
-                                    <span class="me-2">
-                                        <i class="fas fa-plus"></i>
-                                    </span>
-                                    Surat Baru
-                                </a>
-                            </span>
-                        </div> --}}
-                    </div>
                 </div>
             </div>
         </div>
