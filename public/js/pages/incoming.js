@@ -32,7 +32,7 @@ $(document).ready(function () {
                     console.log(row.dari);
                     // Tentukan apakah pesan 'Baru' perlu ditampilkan
                     var badge = row.is_read == 0 ? '<span class="badge bg-danger">Baru</span><br>' : '';
-                    
+
                     // Potong teks jika lebih dari 50 karakter
                     var displayText = data.length > 50 ? data.substr(0, 50) + '...' : data;
 
@@ -97,7 +97,8 @@ $(document).ready(function () {
         }
     });
 
-    $("#form-create").submit(function (e) {R
+    $("#form-create").submit(function (e) {
+
         e.preventDefault();
         var formData = new FormData($("#form-create")[0]);
 
@@ -248,28 +249,28 @@ $(document).ready(function () {
         $("#modal-disposisi").modal("show");
     });
 
-    $('#modal-create').on("shown.bs.modal", function () {
-        $.ajax({
-            type: "GET",
-            url: "/letter/incoming/get-number/" + $("#major_id").val(),
-            data: "null",
-            dataType: "json",
-            beforeSend: function () {
-                $.LoadingOverlay("show");
-            },
-            success: function (response) {
-                if (response.meta.status == 'success') {
-                    $.LoadingOverlay("hide");
-                    $("input[name='no_agenda']").val(response.data);
-                }
-            },
-            error: function (xhr, status, error) {
-                $.LoadingOverlay("hide");
-                console.log(xhr)
-                Swal.fire('Error!', 'Gagal mengambil no surat. Silahkan cek log server.', 'error')
-            }
-        });
-    });
+    // $('#modal-create').on("shown.bs.modal", function () {
+    //     $.ajax({
+    //         type: "GET",
+    //         url: "/letter/incoming/get-number/" + $("#major_id").val(),
+    //         data: "null",
+    //         dataType: "json",
+    //         beforeSend: function () {
+    //             $.LoadingOverlay("show");
+    //         },
+    //         success: function (response) {
+    //             if (response.meta.status == 'success') {
+    //                 $.LoadingOverlay("hide");
+    //                 $("input[name='no_agenda']").val(response.data);
+    //             }
+    //         },
+    //         error: function (xhr, status, error) {
+    //             $.LoadingOverlay("hide");
+    //             console.log(xhr)
+    //             Swal.fire('Error!', 'Gagal mengambil no surat. Silahkan cek log server.', 'error')
+    //         }
+    //     });
+    // });
 
     // $('#modal-disposisi').on("shown.bs.modal", function () {
     //     $.ajax({
@@ -406,5 +407,28 @@ $(document).ready(function () {
         });
     });
 
+    $("#jenis").change(function (e) {
+        e.preventDefault();
 
+        $.ajax({
+            type: "get",
+            url: "/letter/outgoing/get-number/" + $(this).val(),
+            data: null,
+            dataType: "json",
+            beforeSend: function () {
+                $.LoadingOverlay("show");
+            },
+            success: function (response) {
+                if (response.meta.status == 'success') {
+                    $.LoadingOverlay("hide");
+                    $("input[name='no_surat']").val(response.data);
+                }
+            },
+            error: function (xhr, status, error) {
+                $.LoadingOverlay("hide");
+                console.log(xhr)
+                Swal.fire('Error!', 'Gagal mengambil no surat. Silahkan cek log server.', 'error')
+            }
+        });
+    });
 });

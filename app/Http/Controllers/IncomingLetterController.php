@@ -177,20 +177,63 @@ class IncomingLetterController extends Controller
             ? Major::all()
             : Major::where('id', '!=', auth()->user()->major_id)->get();
 
-        return view('pages.letters.incoming', compact('major'));
+        $typesName = $namaSurat = LetterType::all('id', 'name');
+
+        return view('pages.letters.incoming', compact('major', 'typesName'));
     }
 
+    // public function store(Request $request)
+    // {
+    //     $validator = Validator::make($request->all(), [
+    //         'no_agenda' => 'required',
+    //         'tgl_terima' => 'required',
+    //         'no_surat' => 'required',
+    //         'tgl_surat' => 'required',
+    //         'dari' => 'required',
+    //         'perihal' => 'required',
+    //         'file' => 'required|file|mimes:pdf|max:2048'
+    //     ]);
 
+    //     if ($validator->fails()) {
+    //         return ResponseFormatter::error(null, $validator->errors(), 422);
+    //     }
+
+    //     try {
+    //         $file = $request->file('file');
+    //         $fileName = Str::slug(pathinfo($file->getClientOriginalName(), PATHINFO_FILENAME), '-');
+    //         $path = Storage::putFileAs(
+    //             'public/transaction-letters',
+    //             $request->file('file'),
+    //             time() . '-' . $fileName . '.' . $file->getClientOriginalExtension()
+    //         );
+    //         $fileName = explode("/", $path)[2];
+
+    //         $incomingLetter = new IncomingLetter();
+    //         $incomingLetter->user_id = auth()->user()->id;
+    //         $incomingLetter->major_id = auth()->user()->major_id;
+    //         $incomingLetter->no_agenda = $request->no_agenda;
+    //         $incomingLetter->tgl_terima = $request->tgl_terima;
+    //         $incomingLetter->no_surat = $request->no_surat;
+    //         $incomingLetter->tgl_surat = $request->tgl_surat;
+    //         $incomingLetter->dari = $request->dari;
+    //         $incomingLetter->perihal = $request->perihal;
+    //         $incomingLetter->file = $fileName;
+    //         $incomingLetter->save();
+
+    //         return ResponseFormatter::success($incomingLetter, 'Surat Masuk berhasil ditambahkan', 201);
+    //     } catch (\Exception $e) {
+    //         return ResponseFormatter::error(null, $e->getMessage(), 500);
+    //     }
+    // }
 
 
     public function store(Request $request)
     {
+
         $validator = Validator::make($request->all(), [
-            'no_agenda' => 'required',
-            'tgl_terima' => 'required',
             'no_surat' => 'required',
+            'jenis' => 'required',
             'tgl_surat' => 'required',
-            'dari' => 'required',
             'perihal' => 'required',
             'file' => 'required|file|mimes:pdf|max:2048'
         ]);
@@ -199,7 +242,10 @@ class IncomingLetterController extends Controller
             return ResponseFormatter::error(null, $validator->errors(), 422);
         }
 
+        DB::beginTransaction();
+
         try {
+
             $file = $request->file('file');
             $fileName = Str::slug(pathinfo($file->getClientOriginalName(), PATHINFO_FILENAME), '-');
             $path = Storage::putFileAs(
@@ -212,21 +258,26 @@ class IncomingLetterController extends Controller
             $incomingLetter = new IncomingLetter();
             $incomingLetter->user_id = auth()->user()->id;
             $incomingLetter->major_id = auth()->user()->major_id;
-            $incomingLetter->no_agenda = $request->no_agenda;
-            $incomingLetter->tgl_terima = $request->tgl_terima;
+            $incomingLetter->dari = $request->dari;
+            $incomingLetter->no_agenda = $request->no_surat; 
             $incomingLetter->no_surat = $request->no_surat;
             $incomingLetter->tgl_surat = $request->tgl_surat;
-            $incomingLetter->dari = $request->dari;
+            $incomingLetter->tgl_terima = $request->tgl_surat;
             $incomingLetter->perihal = $request->perihal;
             $incomingLetter->file = $fileName;
             $incomingLetter->save();
 
+            DB::commit();
+
             return ResponseFormatter::success($incomingLetter, 'Surat Masuk berhasil ditambahkan', 201);
         } catch (\Exception $e) {
+
+            DB::rollBack();
+            Log::error("OutgoingLetterController@store: " . $e->getMessage());
             return ResponseFormatter::error(null, $e->getMessage(), 500);
         }
     }
-
+    
     public function show($id)
     {
         $incomingLetter = IncomingLetter::find($id);

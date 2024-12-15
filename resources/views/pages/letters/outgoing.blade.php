@@ -13,8 +13,7 @@
                         </h2>
                     </div>
                     <!-- Page title actions -->
-                    @if (auth()->user()->isAdmin())
-                    @else
+                    @if (!auth()->user()->isAdmin())
                     <div class="col-auto ms-auto d-print-none">
                         <div class="btn-list">
                             <span class="d-none d-sm-inline">
