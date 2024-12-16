@@ -152,9 +152,11 @@ class IncomingLetterController extends Controller
                         ->get();
 
                     // Merge incoming and outgoing letters
-                    $data = $incomingLetters->merge($outgoingLetters)
-                        ->sortByDesc('tgl_surat')
-                        ->values();
+                    // $data = $incomingLetters->merge($outgoingLetters)
+                    //     ->sortByDesc('tgl_surat')
+                    //     ->values();
+
+                    $data = $incomingLetters;
 
                     // Remove duplicates based on combination of tgl_surat, user_id, and kepada
                     // $data = $data->unique(function ($item) {

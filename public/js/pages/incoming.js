@@ -31,13 +31,14 @@ $(document).ready(function () {
                 "render": function (data, type, row, meta) {
                     console.log(row.dari);
                     // Tentukan apakah pesan 'Baru' perlu ditampilkan
-                    var badge = row.is_read == 0 ? '<span class="badge bg-danger">Baru</span><br>' : '';
+                    // var badge = row.is_read == 0 ? '<span class="badge bg-danger">Baru</span><br>' : '';
 
                     // Potong teks jika lebih dari 50 karakter
                     var displayText = data.length > 50 ? data.substr(0, 50) + '...' : data;
 
                     // Gabungkan teks dengan badge (jika ada)
-                    return `${displayText} ${badge}`;
+                    // return `${displayText} ${badge}`;
+                    return displayText;
                 }
             },
             {
